@@ -1,12 +1,6 @@
-﻿int a;
-Console.Write($"Введите число ");
-int.TryParse(Console.ReadLine()!, out a);
-int b = a;
-int sum = 0;
-while(b > 0)
+﻿int[] a = new int[8];
+for( int b = 0; b < a.Length; b++)
 {
-    sum += b % 10;
-    b /= 10;
+    a[b] = new Random().Next(9);
+    Console.Write($"{a[b]} - ");
 }
-Console.Write($"{a} = {sum}");
-
