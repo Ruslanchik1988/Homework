@@ -1,10 +1,16 @@
-﻿int[] array = new int[5];
-for(int i = 0; i < array.Length; i ++)
-    array[i] = new Random().Next(100, 1000);
-    int c = 0;
-for(int i = 0; i < array.Length; i ++)
-    if(array[i] % 2 == 0)
-    c++;
-    for(int i = 0; i < array.Length; i ++)
-Console.Write($"{array[i]} ");
-Console.Write($"= {c}");
+﻿int n;
+Console.Write($"Введите число N ");
+int.TryParse(Console.ReadLine()!, out n);
+
+NumberN(n, 1);
+
+void NumberN(int r, int l)
+{
+    if( r == l)
+    Console.Write($"{r} ");
+    else
+    {
+       Console.Write($"{r} ");
+       NumberN( r -1, l);
+    }
+}
