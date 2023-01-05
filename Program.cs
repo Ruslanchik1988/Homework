@@ -1,16 +1,20 @@
-﻿int n;
-Console.Write($"Введите число N ");
-int.TryParse(Console.ReadLine()!, out n);
-
-NumberN(n, 1);
-
-void NumberN(int r, int l)
+﻿int M;
+int N;
+Console.Write($"Введите число M: ");
+int.TryParse(Console.ReadLine()!, out M);
+Console.Write($"Введите число N: ");
+int.TryParse(Console.ReadLine()!, out N);
+if(M > N)
 {
-    if( r == l)
-    Console.Write($"{r} ");
-    else
-    {
-       Console.Write($"{r} ");
-       NumberN( r -1, l);
-    }
+    Console.Write($"Число M не может быть больше числа N ");
 }
+
+int Sum(int M, int N)
+{
+    if(M >= N)
+    return M;
+   return M + Sum(M + 1, N); 
+}
+Console.Write($"{Sum(M, N)}");
+
+
